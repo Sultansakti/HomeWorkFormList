@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Registrasi dan List Pendaftar</title>
+</head>
+<body class="bg-gray-100">
+
+<div class="container mx-auto p-8">
+  
+  <div class="mb-4">
+    <input type="radio" id="tab1" name="tab" class="hidden" checked>
+    <label for="tab1" class="cursor-pointer bg-gray-300 text-gray-700 py-2 px-4 inline-block rounded-t-lg">Registrasi</label>
+    
+    <input type="radio" id="tab2" name="tab" class="hidden">
+    <label for="tab2" class="cursor-pointer bg-gray-300 text-gray-700 py-2 px-4 inline-block rounded-t-lg">List Pendaftar</label>
+    
+    
+    <div class="tab-content">
+     
+      <div class="tab-pane">
+        <form id="registrationForm" class="mt-4">
+          <label for="name" class="block text-sm font-medium text-gray-600">Nama (minimal 10 karakter)</label>
+          <input type="text" id="name" name="name" class="mt-1 p-2 w-full border rounded-md">
+          
+          <label for="age" class="block text-sm font-medium text-gray-600 mt-4">Umur (minimal 25 tahun)</label>
+          <input type="number" id="age" name="age" class="mt-1 p-2 w-full border rounded-md">
+          
+          <label for="money" class="block text-sm font-medium text-gray-600 mt-4">Uang Sangu (100 ribu - 1 juta)</label>
+          <input type="number" id="money" name="money" class="mt-1 p-2 w-full border rounded-md">
+          
+          <button type="button" onclick="submitForm()" class="mt-4 bg-blue-500 text-white p-2 rounded-md">Submit</button>
+        </form>
+      </div>
+      
+     
+      <div class="tab-pane">
+        <table class="min-w-full bg-white border border-gray-300">
+          <thead>
+            <tr>
+              <th class="border p-2">Nama</th>
+              <th class="border p-2">Umur</th>
+              <th class="border p-2">Uang Sangu</th>
+              <th class="border p-2">Resume</th>
+            </tr>
+          </thead>
+          <tbody id="applicantList"></tbody>
+        </table>
+        
+        <div id="averageInfo" class="mt-4"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="HomeWorkFormList.js"></script>
+
+</body>
+</html>
